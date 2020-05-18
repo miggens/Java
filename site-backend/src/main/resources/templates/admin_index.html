@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" lang="en">
+<head>
+    <title>Home page</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <section class="hero is-dark is-large">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Site Admin
+                </h1>
+                <h2 class="subtitle">
+                    Login to update site.
+                </h2>
+            </div>
+        </div>
+    </section>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <!--section class="section">
+            <div class="container"-->
+                <div class="navbar-brand">
+                    <!-- navbar items, navbar burger... -->
+                    <div class="navbar-item">
+                        <a th:href="@{/}">
+                            <span class="icon is-medium">
+                                <i class="fas fa-2x fa-chess-rook"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="navbar-menu">
+                    <!-- navbar start, navbar end -->
+                    <div class="navbar-start">
+                        <div class="navbar-item" sec:authorize="isAuthenticated()">
+                            <a class="is-size-3" th:href="@{/logout}">Logout</a>
+                        </div>
+                        <div class="navbar-item" sec:authorize="isAuthenticated()">
+                            <a class="is-size-3" th:href="@{/push-content}">Publish</a>
+                        </div>
+                        <div class="navbar-item" sec:authorize="isAnonymous()">
+                            <a class="is-size-3" th:href="@{/login}">Login</a>
+                        </div>
+                    </div>
+                </div>
+            <!--/div>
+        </section-->
+    </nav>
+</body>
+</html>

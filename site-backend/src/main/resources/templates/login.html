@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Login</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <div class="columns">
+        <div class="column is-4"></div>
+        <div class="column is-4 login-form">
+            <h1 class="has-text-dark has-text-weight-light is-family-sans-serif is-size-1">Admin Login</h1>
+            <form th:action="@{/login}" method="post">
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-primary is-medium" name="username" type="text" placeholder="Username">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-primary is-medium" name="password" type="password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="control">
+                    <input class="button is-warning" type="submit" value="Login">
+                </div>
+            </form>
+            <p th:if="${param.error}" class="error is-size-5">Wrong user or password</p>
+        </div>
+        <div class="column is-4"></div>
+    </div>
+</body>
+</html>

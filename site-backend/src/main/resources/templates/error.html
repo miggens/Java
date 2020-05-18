@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home page</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<section class="hero is-danger is-large">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title" th:text="${error}">
+                Error Status
+            </h1>
+            <h2 class="subtitle" th:text="'Status code: '+ ${status}">
+            </h2>
+        </div>
+    </div>
+</section>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <section class="section">
+        <div class="container">
+            <div class="navbar-brand">
+                <!-- navbar items, navbar burger... -->
+            </div>
+            <div class="navbar-menu">
+                <!-- navbar start, navbar end -->
+                <div class="navbar-start">
+                    <a class="nav-item is-size-3" th:href="@{/admin}">Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</nav>
+</body>
+</html>

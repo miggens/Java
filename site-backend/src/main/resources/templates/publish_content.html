@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Publish Content</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="columns">
+    <div class="column is-2"></div>
+    <div class="column is-8 push-contents-view" th:object="${publishedArticle}">
+        <h1 class="has-text-dark has-text-centered is-family-sans-serif is-size-1">Article Published</h1>
+        <hr />
+        <h2 class="is-size-2 has-text-dark has-text-weight-light is-family-sans-serif" th:text="*{title}"></h2>
+        <br />
+        <p class="is-size-5 has-text-dark has-text-weight-light is-family-sans-serif" th:text="*{createdOn}"></p>
+        <br />
+        <p class="is-size-3 has-text-dark has-text-weight-light is-family-sans-serif">Tags</p>
+        <p class="is-size-4 has-text-dark has-text-weight-light is-family-sans-serif" th:text="*{tags}"></p>
+        <!--ul th:each="tags : *{tagsList}}">
+            <li class="is-size-4 has-text-dark has-text-weight-light is-family-sans-serif" th:text="${tag}}"></li>
+        </ul-->
+        <br />
+        <p class="is-size-3 has-text-dark has-text-weight-light is-family-sans-serif">Image Links</p>
+        <!--ul th:each="img : *{imageLinksList}}">
+            <li class="is-size-4 has-text-dark has-text-weight-light is-family-sans-serif" th:text="${img}}"></li>
+        </ul-->
+        <p class="is-size-4 has-text-dark has-text-weight-light is-family-sans-serif" th:text="*{imageLinks}"></p>
+        <br />
+        <!--ul th:each="content : *{fullContentList}}">
+            <li class="is-size-4 has-text-dark has-text-weight-light is-family-sans-serif" th:text="${content}}"></li>
+        </ul-->
+        <p class="is-size-5 has-text-dark has-text-weight-light is-family-sans-serif" th:text="*{fullContent}"></p>
+        <p class="is-size-3"><a th:href="@{/}">Home</a></p>
+    </div>
+    <div class="column is-2"></div>
+</div>
+</body>
+</html>
