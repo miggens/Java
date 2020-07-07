@@ -13,3 +13,6 @@ This project (not thoughtfully named) is a Spring Boot MVC application that func
 
 This project functions as the REST data retrieval service for my site https://miggens.com. Its purpose is to fetch data from the DynamoDB Table that site-backend populates. At this time there are only a few endpoints and also a work in progress. 
 
+## greedy-coins
+
+Demo project for Digital Air Strike code challenge. This app takes in a dollar amount ex. 1.29. And outputs the optimal number of coins that sum to input.  
